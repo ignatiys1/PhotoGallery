@@ -29,6 +29,19 @@ extension UILabel {
         
         self.text = text
         self.textColor = .black
+        self.font = UIFont.init(name: "Avenir Next Demi Bold", size: frame.height*0.5)!
+        self.numberOfLines = 2
+        self.textAlignment = .center
+        self.adjustsFontSizeToFitWidth = true
+        self.translatesAutoresizingMaskIntoConstraints = false
+        //self.backgroundColor = .red
+    }
+    
+    convenience init(text: String) {
+        self.init()
+        
+        self.text = text
+        self.textColor = .black
         self.font = UIFont.init(name: "Avenir Next Demi Bold", size: 20)!
         self.textAlignment = .center
         self.adjustsFontSizeToFitWidth = true

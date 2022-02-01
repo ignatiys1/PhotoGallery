@@ -58,14 +58,14 @@ class RequestManager {
 //        downTask.resume()
     }
     
-    func getImage(named name: String, number: Int, completion: @escaping (UIImage, Int, String) -> ()) {
+    func getImage(named name: String, completion: @escaping (UIImage) -> ()) {
         let imageURL = URL(string: "\(base)/\(name).jpg")
         if let imageURL = imageURL {
             URLSession.shared.dataTask(with: imageURL, completionHandler: { data, error, response in
                 if let data = data {
                     let image = UIImage(data: data)
                     if let image = image {
-                        completion(image, number, name)
+                        completion(image)
                     }
                 }
             }).resume()
